@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.util.Scanner;
 
 
-public class TUIcbzSorter {
+public class TUICbzSorter {
 
     public static Scanner sc = new Scanner(System.in);
 
