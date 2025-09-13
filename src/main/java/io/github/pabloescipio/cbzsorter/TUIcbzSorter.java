@@ -1,4 +1,4 @@
-package org;
+package io.github.pabloescipio.cbzsorter;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,7 +11,7 @@ public class TUIcbzSorter {
 
     public static void main(String[] args) {
         // Load Properties
-        manageProperties.configLoad();
+        ManageProperties.configLoad();
         //Variables
         byte index = 0;
 
@@ -23,9 +23,9 @@ public class TUIcbzSorter {
                 // Menu
                 switch (index) {
                     case 0 -> System.out.println("Closing...");
-                    case 1 -> cbzSorter.sorter();
+                    case 1 -> CbzSorter.sorter();
                     case 2 -> editConfig();
-                    case 3 -> cbzSorter.test();
+                    case 3 -> CbzSorter.test();
                     default -> System.out.println("Index doesn't exist");
                 }
             } catch (Exception e) {
@@ -58,13 +58,13 @@ public class TUIcbzSorter {
      */
     public static void editConfig() throws IOException {
         System.out.println("Source path:");
-        manageProperties.prop.setProperty("source", sc.nextLine());
+        ManageProperties.prop.setProperty("source", sc.nextLine());
         System.out.println("Destination path:");
-        manageProperties.prop.setProperty("destination", sc.nextLine());
+        ManageProperties.prop.setProperty("destination", sc.nextLine());
         System.out.println("Old path:");
-        manageProperties.prop.setProperty("old", sc.nextLine());
-        manageProperties.prop.store(System.out, null);
-        manageProperties.prop.store(Files.newOutputStream(manageProperties.config), null);
+        ManageProperties.prop.setProperty("old", sc.nextLine());
+        ManageProperties.prop.store(System.out, null);
+        ManageProperties.prop.store(Files.newOutputStream(ManageProperties.config), null);
     }
 
 
