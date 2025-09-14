@@ -1,4 +1,4 @@
-package org;
+package io.github.pabloescipio.cbzsorter;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
 
-public class manageProperties {
+public class ManageProperties {
 
     public static Path config = Paths.get("config.properties");
     public static Properties prop = new Properties();
@@ -15,7 +15,6 @@ public class manageProperties {
     /**
      * ToDo: Reformat Errors
      */
-
     public static void configLoad() {
         try {
             InputStream is = Files.newInputStream(config);
@@ -24,4 +23,5 @@ public class manageProperties {
             System.out.println("Loading Error: " + e);
         }
     }
+
 }
